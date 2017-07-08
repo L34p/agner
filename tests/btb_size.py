@@ -48,7 +48,7 @@ def plot(xs, ys, result, name, index):
     ys = np.array(ys + [ys[-1] * 2])
     xx, yy = np.meshgrid(xs, ys)
     result = np.array(result)
-    plt.pcolor(xx, yy, result)
+    plt.pcolor(xx, yy, result, cmap='jet')
     plt.colorbar()
 
 
