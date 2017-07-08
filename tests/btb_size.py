@@ -6,6 +6,8 @@ import sys
 
 from lib.agner import *
 
+import matplotlib
+matplotlib.use('Agg')
 
 def btb_size_test(name, num_branches, align):
     test_code = """
