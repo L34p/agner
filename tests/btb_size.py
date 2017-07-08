@@ -99,10 +99,10 @@ def add_tests(agner):
     add_test(agner, range(512, 9000, 512), [2, 4, 8, 16, 32, 64], "Total size")
 
     # attempt to find set bits
-    add_test(agner, [3, 4, 5], [2**x for x in range(1, 24)],  "Bits in set")
+    #add_test(agner, [3, 4, 5], [2**x for x in range(1, 24)],  "Bits in set")
 
-    # attempt to find number of ways : large leaps to ensure we hit the same set every time
-    add_test(agner, range(1,12), [2**x for x in range(1, 21)], "Number of ways")
+    ## attempt to find number of ways : large leaps to ensure we hit the same set every time
+    #add_test(agner, range(1,12), [2**x for x in range(1, 21)], "Number of ways")
 
-    # attempt to find number of addr bits : two branches very spread
-    add_test(agner, [2], [2**x for x in range(6, 28)], "Number of address bits for set")
+    ## attempt to find number of addr bits : two branches very spread
+    #add_test(agner, [2], [2**x for x in range(6, 28)], "Number of address bits for set")
