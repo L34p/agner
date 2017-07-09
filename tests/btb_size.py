@@ -96,7 +96,9 @@ def btb_plot(nums, aligns, name, results, alt):
                 })
                 xindex += 1
             yindex += 1
-        print max(l, key=lambda x: x['hit'] * x['branches'])
+        m = max(l, key=lambda x: x['hit'] * x['branches'])
+        print m
+        print "Guessed # of entries: {}".format(m['branches'])
     else:
         plot(nums, aligns, results['resteer'], "Front-end re-steers", 0)
 
