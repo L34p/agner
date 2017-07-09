@@ -81,13 +81,24 @@ def btb_plot(nums, aligns, name, results, alt):
     plt.setp(labels, rotation=90)
     plt.title(name)
     fig.canvas.set_window_title(name)
+
     if alt:
-        plot(nums, aligns, results['resteer'], "Front-end re-steers", 0)
+        l = list()
+        yindex = 0
+        for yline in results['resteer']:
+            xindex = 0
+            for val in yline:
+                l.append({
+                    'branches': nums[xindex],
+                    'distance': aligns[yindex],
+                    'value': val,
+                    'hit': (1-val),
+                })
+                xindex += 1
+            yindex += 1
+        print max(l, key=lambda x: x['hit'] * x['branches'])
     else:
-        plot(nums, aligns, results['resteer'], "Front-end re-steers", 1)
-        plot(nums, aligns, results['early'], "Early clears", 2)
-        plot(nums, aligns, results['late'], "Late clears", 3)
-        plot(nums, aligns, results['core'], "Core cycles/branch", 4)
+        plot(nums, aligns, results['resteer'], "Front-end re-steers", 0)
 
 
 def add_test(agner, nums, aligns, name):
